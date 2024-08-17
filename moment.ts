@@ -32,3 +32,15 @@ console.log(moment().subtract(6, "days").calendar()); // Last Sunday at 5:29 PM
 console.log(moment().subtract(16, "days").calendar()); //08/01/2024 -> MM/DD/YYYY
 
 console.log(moment().subtract(16, "days").format("MMM Do YY")); //Aug 1st 24
+
+const now = moment();
+
+// Use Intl.DateTimeFormat to format the date
+const formattedDate = new Intl.DateTimeFormat("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+  weekday: "long",
+}).format(now.toDate());
+
+console.log(formattedDate); // e.g., "Saturday, August 17, 2024"
